@@ -8,10 +8,13 @@
 
 **Required Actions:**
 
-Before working on any Svelte/SvelteKit task, you MUST read the distilled Svelte documentation at https://svelte.dev/llms-medium.txt.
+- Before working on any Svelte task, you MUST read the distilled Svelte documentation at https://svelte.dev/docs/svelte/llms-small.txt.
+- If you are working with SvelteKit (any backend logic like routes, SSR etc.), you MUST read the distilled SvelteKit documentation at https://svelte.dev/docs/kit/llms-small.txt.
 
 **Svelte/Sveltekit Rules:**
 
+- Always check for existing components before creating a new one or adding custom styling.
+- When replacing a component, consider whether a more generalized solution is possible, for example by modifying the component.
 - Be careful with using `{#await}` blocks.
   - This is because Svelte rerenders all content when the promise changes, even if the promise result ends up being the same. If the content depends directly on the results instead of the promise, and the result ends up being the same after an update, the content won't rerender/remount, avoiding unnecessary rerenders.
 - Do not rely on deep dependency tracking with `$effect` and `$derived`. Use `untrack` liberally to be safe.
